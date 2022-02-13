@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function NewsItem() {
   const { query } = useRouter();
@@ -8,7 +9,7 @@ export default function NewsItem() {
   return (
     <>
       <h1>{pageTitle}</h1>
-      <a href="/news">Go back</a>
+      <Link href="/news">Go back</Link>
     </>
   );
 }

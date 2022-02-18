@@ -10,7 +10,7 @@ export interface MeetupDocumentRes {
 export default async function mongoConnect() {
   // run the mongodb client
   const client = await MongoClient.connect(
-    "mongodb+srv://eliad91:nJsROxMSHPes0aEE@cluster1.p2aa1.mongodb.net/next-js-meetups?retryWrites=true&w=majority"
+    "mongodb+srv://<username>:<password>@cluster1.p2aa1.mongodb.net/next-js-meetups?retryWrites=true&w=majority"
   );
 
   // connect to the db

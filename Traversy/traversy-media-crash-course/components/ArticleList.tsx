@@ -10,7 +10,7 @@ export default function ArticleList({ articles }: ArticleListProps) {
 	return (
 		<div className={articleListStyles.grid}>
 			{articles.map((article) => (
-				<ArticleItem article={article} />
+				<ArticleItem key={article.id} article={article} />
 			))}
 		</div>
 	);

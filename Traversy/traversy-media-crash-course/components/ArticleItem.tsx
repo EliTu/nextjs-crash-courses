@@ -8,7 +8,7 @@ interface ArticleProps {
 
 export default function ArticleItem({ article }: ArticleProps) {
 	return (
-		<Link href="/article/[id]" as={`/article/${article.id}`}>
+		<Link href={`/article/${article.id}`}>
 			<a className={articleStyles.card}>
 				<h3>{article.title} &rarr;</h3>
 				<p>{article.body}</p>

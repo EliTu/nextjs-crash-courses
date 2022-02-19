@@ -1,4 +1,5 @@
-import styles from "../styles/Layout.module.css";
+import layoutStyles from "../styles/Layout.module.css";
+import Header from "./Header";
 import Nav from "./Nav";
 
 interface LayoutProps {
@@ -9,8 +10,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Nav />
-      <div className={styles.container}>
-        <main className={styles.main}>{children}</main>
+      <div className={layoutStyles.container}>
+        <main className={layoutStyles.main}>
+          <Header />
+          {children}
+        </main>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import type { GetStaticPropsResult } from 'next';
 import Head from 'next/head';
 import ArticleList from '../components/ArticleList';
+import { serverUrl } from '../config/env';
 
 export interface Article {
 	id: number;
@@ -28,7 +29,7 @@ export default function Home({ articles }: HomeProps) {
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<HomeProps>> {
 	try {
-		const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
+		const res = await fetch(`${serverUrl}/api/articles`);
 		const articles = await res.json();
 
 		return {

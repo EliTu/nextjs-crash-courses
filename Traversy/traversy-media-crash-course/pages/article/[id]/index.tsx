@@ -1,10 +1,4 @@
-import {
-	GetServerSidePropsContext,
-	GetServerSidePropsResult,
-	GetStaticPathsResult,
-	GetStaticPropsContext,
-	GetStaticPropsResult,
-} from 'next';
+import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import Link from 'next/link';
 import { Article } from '../..';
 

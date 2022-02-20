@@ -3,10 +3,11 @@ import Head from 'next/head';
 import ArticleList from '../components/ArticleList';
 
 export interface Article {
-	userId: number;
-	id: number;
+	id: number | string;
 	title: string;
 	body: string;
+	excerpt?: string;
+	userId?: number;
 }
 
 interface HomeProps {

@@ -1,6 +1,7 @@
 import { GetStaticPathsResult, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 import Link from 'next/link';
 import { Article } from '../..';
+import Meta from '../../../components/Meta';
 import { serverUrl } from '../../../config/env';
 
 interface ArticleDetailsProps {
@@ -10,6 +11,7 @@ interface ArticleDetailsProps {
 export default function ArticleDetails({ article }: ArticleDetailsProps) {
 	return (
 		<>
+			<Meta title={article.title} />
 			<h1>{article.title}</h1>
 			<p>{article.body}</p>
 			<br />

@@ -1,21 +1,23 @@
-import layoutStyles from "../styles/Layout.module.css";
-import Header from "./Header";
-import Nav from "./Nav";
+import layoutStyles from '../styles/Layout.module.css';
+import Header from './Header';
+import Meta from './Meta';
+import Nav from './Nav';
 
 interface LayoutProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  return (
-    <>
-      <Nav />
-      <div className={layoutStyles.container}>
-        <main className={layoutStyles.main}>
-          <Header />
-          {children}
-        </main>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Meta />
+			<Nav />
+			<div className={layoutStyles.container}>
+				<main className={layoutStyles.main}>
+					<Header />
+					{children}
+				</main>
+			</div>
+		</>
+	);
 }

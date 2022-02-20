@@ -1,4 +1,10 @@
-import { GetServerSidePropsContext, GetServerSidePropsResult, GetStaticPropsContext, GetStaticPropsResult } from 'next';
+import {
+	GetServerSidePropsContext,
+	GetServerSidePropsResult,
+	GetStaticPathsResult,
+	GetStaticPropsContext,
+	GetStaticPropsResult,
+} from 'next';
 import Link from 'next/link';
 import { Article } from '../..';
 
@@ -15,6 +21,30 @@ export default function ArticleDetails({ article }: ArticleDetailsProps) {
 			<Link href="/">Go back</Link>
 		</>
 	);
+}
+
+export async function getStaticPaths(): Promise<GetStaticPathsResult> {
+	try {
+		const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+		const posts = (await res.json()) as Article[];
+
+		const paths = posts.map(({ id }) => ({
+			params: {
+				id: id.toString(),
+			},
+		}));
+
+		return {
+			paths,
+			fallback: false,
+		};
+	} catch (error) {
+		console.error(error);
+		return {
+			paths: [],
+			fallback: false,
+		};
+	}
 }
 
 export async function getStaticProps(

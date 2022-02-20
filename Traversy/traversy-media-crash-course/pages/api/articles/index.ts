@@ -1,5 +1,4 @@
-import { NextApiResponse } from 'next';
-import { NextApiHandler, NextApiRequest } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { Article } from '../..';
 import { articles } from '../../../data';
 

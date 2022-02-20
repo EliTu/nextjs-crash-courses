@@ -3,7 +3,7 @@ import Head from 'next/head';
 import ArticleList from '../components/ArticleList';
 
 export interface Article {
-	id: number | string;
+	id: number;
 	title: string;
 	body: string;
 	excerpt?: string;
